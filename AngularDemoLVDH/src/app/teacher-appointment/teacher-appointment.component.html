@@ -1,0 +1,32 @@
+<div>
+  <h2>This is the teacher appointment (parent) component</h2>
+  <p>
+    We can talk to the child component using the Input decorator infront of a
+    property
+  </p>
+  <p>Try using the decorator to talk to the teacher and student component</p>
+</div>
+<div style="display: flex">
+  <kendo-textbox [(value)]="teacherIdParent"></kendo-textbox>
+  <button style="width : 80%" (click)="changeTeacherId(teacherIdParent)">
+    Change teacher id
+  </button>
+</div>
+<div>
+  <kendo-label text="The sum of the teacher ids is:"></kendo-label>
+  <kendo-label [text]="teacherIdSum.toString()"></kendo-label>
+</div>
+
+<div>
+  <!--ToDo implement the parent notifying the child-->
+
+  <teacher
+    [teacherId]="teacherIdChild"
+    (teacherIdChanged)="teacherIdChanged($event)"
+  >
+  </teacher>
+</div>
+
+<div>
+  <student> </student>
+</div>
